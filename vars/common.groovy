@@ -1,4 +1,4 @@
-def jenklib(string stageName) {
+def jenklib(String stageName) {
   if ("${stageName}" == "Build") {
     sh "mvn clean package"
   }
