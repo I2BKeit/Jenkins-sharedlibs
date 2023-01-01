@@ -1,4 +1,4 @@
-def call(String stageName){
+def jenkcall(String stageName){
   
   if ("${stageName}" == "Build")
      {
