@@ -1,0 +1,25 @@
+@Library('keita-sharedlibs') _
+pipeline {
+    agent any
+    tools {
+        maven 'maven'
+    }
+    stages{
+        stage('gitSourceCode'){
+            steps {
+                git branch: 'dev', credentialsId: 'git-credential', url: 'https://github.com/ikclouddama/Jenkins-declarative.git' 
+            }
+        }
+        stage('Build'){
+            steps {
+                common("Build")
+                
+            }
+        }
+        stage('SonarQube Report'){
+            steps {
+                common("SonarQube Report")
+            }
+        }
+    }
+}
