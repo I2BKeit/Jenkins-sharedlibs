@@ -1,14 +1,14 @@
-def jenkcall(String stageName){
+def call(String stageValue){
   
-  if ("${stageName}" == "Build")
+  if ("${stageValue}" == "Build")
      {
        sh "mvn clean package"
      }
-  else if ("${stageName}" == "SonarQube Report")
+  else if ("${stageValue}" == "SonarQube Report")
      {
        sh "mvn clean sonar:sonar"
      }
-  else if ("${stageName}" == "Upload Into Nexus")
+  else if ("${stageValue}" == "Upload Into Nexus")
      {
        sh "mvn clean deploy"
      }
